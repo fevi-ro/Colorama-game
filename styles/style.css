@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+/*
+* CSS-Design
+* Stroop game
+*/
+
+
+/* Layout **********************/
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 241, 210);
+}
+
+#game-area {
+    position: relative;
+    background-color: rgb(255, 252, 246);
+    height: 100vh;
+    display: flex;
+}
+
+header {
+    display: inline-block;
+}
+
+.main {
+    display: inline-flex;
+}
+
+.container {
+    display: inline-flex;
+    padding-top: 15rem;
+}
+
+#colouredWords {
+    width: 5rem;
+    height: 5rem;
+    border-color: #FF0A33;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+/* blue button ***********/
+
+#blue.hexagon.colourbtn {
+    width: 100px;
+    height: 57.735px;
+    position: relative;
+    margin: 1rem;
+    background-color: #1FB4FF;
+}
+
+#blue.hexagon.colourbtn::before {
+    content: "";
+    position: absolute;
+    top: -28.8675px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 28.8675px solid #1FB4FF;
+}
+
+#blue.hexagon.colourbtn::after {
+    content: "";
+    position: absolute;
+    bottom: -28.8675px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 28.8675px solid #1FB4FF;
+}
+
+
+/*  green button ********************/
+
+#green.hexagon.colourbtn {
+    width: 100px;
+    height: 57.735px;
+    position: relative;
+    margin: 1rem;
+    background-color: #70FF57;
+}
+
+#green.hexagon.colourbtn::before {
+    content: "";
+    position: absolute;
+    top: -28.8675px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 28.8675px solid #70FF57;
+}
+
+#green.hexagon.colourbtn::after {
+    content: "";
+    position: absolute;
+    bottom: -28.8675px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 28.8675px solid #70FF57;
+}
+
+
+/* Red button *********************/
+
+#red.hexagon.colourbtn {
+    width: 100px;
+    height: 57.735px;
+    position: relative;
+    margin: 1rem;
+    background-color: #FF0A33;
+}
+
+#red.hexagon.colourbtn::before {
+    content: "";
+    position: absolute;
+    top: -28.8675px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 28.8675px solid #FF0A33;
+}
+
+#red.hexagon.colourbtn::after {
+    content: "";
+    position: absolute;
+    bottom: -28.8675px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 28.8675px solid #FF0A33;
+}
+
+
+/* Yellow button *********************/
+
+#yellow.hexagon.colourbtn {
+    width: 100px;
+    height: 57.735px;
+    position: relative;
+    margin: 1rem;
+    background-color: #fafa33;
+}
+
+#yellow.hexagon.colourbtn::before {
+    content: "";
+    position: absolute;
+    top: -28.8675px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 28.8675px solid #fafa33;
+}
+
+#yellow.hexagon.colourbtn::after {
+    content: "";
+    position: absolute;
+    bottom: -28.8675px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 28.8675px solid #fafa33;
+}
+
+
+/* Purple button *********************/
+
+#purple.hexagon.colourbtn {
+    width: 100px;
+    height: 57.735px;
+    position: relative;
+    margin: 1rem;
+    background-color: #BB4DFF;
+}
+
+#purple.hexagon.colourbtn::before {
+    content: "";
+    position: absolute;
+    top: -28.8675px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 28.8675px solid #BB4DFF;
+}
+
+#purple.hexagon.colourbtn::after {
+    content: "";
+    position: absolute;
+    bottom: -28.8675px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 28.8675px solid #BB4DFF;
+}
