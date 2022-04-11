@@ -2,75 +2,37 @@ class Game {
     constructor() {
         this.score = 0;
         this.wordsArr = [];
-        this.time = 0;
-
+        this.time = 10;
+        this.countdown = null;
         this.audio = "";
     }
 
     start() {}
 
     getRandomWords() {
-        let colourText = ["Blue", "Green", "Red", "Yellow", "Purple"];
+        let text = ["Blue", "Green", "Red", "Yellow", "Purple"];
 
 
-        for (let i = 0; i < colourText.length; i++) {
-            let randomWord = colourText[Math.floor(Math.random() * colourText.length)]
-
-            const result = this.wordsArr.push(randomWord);
-            return result;
+        for (let i = 0; i < text.length; i++) {
+            let randomWord = text[Math.floor(Math.random() * text.length)]
+            this.wordsArr.push(randomWord);
+            return randomWord;
         }
 
     }
 
 
     getRandomColours() {
+        const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        document.getElementById("colouredWords").style.backgroundColor = "#" + randomColor;
 
-        function randomInteger(max) {
-            return Math.floor(Math.random() * (max + 1));
-        }
 
-        function randomRgbColor() {
-            let r = randomInteger(255);
-            let g = randomInteger(255);
-            let b = randomInteger(255);
-            return [r, g, b];
-        }
-
-        function randomHexColor() {
-            let [r, g, b] = randomRgbColor();
-
-            let hr = r.toString(16).padStart(2, '0');
-            let hg = g.toString(16).padStart(2, '0');
-            let hb = b.toString(16).padStart(2, '0');
-
-            return "#" + hr + hg + hb;
-        }
-
-        function changeColor() {
-
-            let hex = randomHexColor();
-            document.getElementById('colouredWords').value = hex;
-
-        }
-
-        function clickHandler(event) {
-            changeColor();
-            event.preventDefault();
-        }
-
-        document.addEventListener('click', clickHandler);
-
-        changeColor();
-        /*
-        const setBg = () => {
-            const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-            document.words.style.backgroundColor = "#" + randomColor;
-
-        }
-        words.addEventListener("click", setBg);
-        setBg(); */
     }
 
+    setTimer(num) {
+        this.time += num;
+        this.countdown;
+    }
 
     getScore() {
 
@@ -80,8 +42,37 @@ class Game {
 
         console.log(h2.innerText);
         console.log("Correct!");
-        h2.innerText = this.getRandomWords();
-
+        this.score++;
+        document.getElementById("score").innerText = `Score: ${score}`
+        h2.innerText = getRandomWords();
+        h2.style.color = getRandomColours();
     }
-    wrongAnswer() {}
+
+
+    wrongAnswer() {
+
+        console.log("Wrong!");
+    }
+
+
 }
+
+
+let game = new Game();
+
+let randomCl = game.getRandomColours();
+colouredWords.innerHTML = game.getRandomWords();
+
+document.getElementById("colouredWords").addEventListener("click", randomCl);
+
+
+const clickColour = document.querySelector(".container");
+clickColour.addEventListener("click", () => {
+    if (colouredWords === colourBtn) {
+        game.correctAnswer();
+    } else {
+        game.wrongAnswer();
+    }
+})
+
+//
