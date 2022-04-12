@@ -11,39 +11,77 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: rgb(255, 241, 210);
+    margin: 0;
+    background-image: url("../images/6728670.jpg");
 }
 
 #game-area {
     position: relative;
-    background-color: rgb(255, 252, 246);
     height: 100vh;
-    display: flex;
+    display: block;
 }
 
 header {
-    display: inline-block;
+    display: inline-flex;
+    width: 1050px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-height: 5rem;
+    background-color: #c4ffba;
+    align-items: center;
 }
 
-.main {
-    display: inline-flex;
+#score {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: #000000;
+    padding-left: 1rem;
+}
+
+#timer {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    color: #000000;
+    padding-left: 4rem;
+}
+
+main {
+    text-align: center;
+    align-items: center;
+    max-width: 1050px;
+}
+
+.wrapper {
+    text-align: center;
+    align-items: center;
+    max-width: 1050px;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
 }
 
 .container {
     display: inline-flex;
-    padding-top: 15rem;
-}
-
-#colouredWords {
-    width: 5rem;
-    height: 5rem;
-    border-color: #FF0A33;
-    display: inline-flex;
+    padding-top: 8rem;
+    text-align: center;
     align-items: center;
 }
 
+#colouredWords {
+    border-color: #FF0A33;
+}
+
+.col1 {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding-top: 10rem;
+}
+
 h2 {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Ranchers', cursive;
     font-size: 4rem;
 }
 

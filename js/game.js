@@ -3,23 +3,43 @@ class Game {
         this.score = 0;
         this.wordsArr = [];
         this.time = 10;
-        this.countdown = null;
+        this.interval = null;
         this.audio = "";
+        this.randomWord = '';
+        this.wrongBuzzer = new Audio("sounds/add-ons_error.mp3");
+        this.correctBuzzer = new Audio("sounds/mixkit-instant-win-2021.wav");
+        this.gameOverSound = new Audio("sounds/mixkit-player-losing-or-failing-2042.wav");
     }
 
-    start() {}
+
+    /* start() {
+         this.setTimer();
+         document.getElementById("score").innerText = `Score: ${this.score}`
+         document.getElementById('timer').innerText = `Time Left : ${this.time.toFixed(1)}`;
+     } */
+
+    startGame() {
+        this.setTimer();
+        document.getElementById("score").innerText = `Score: ${this.score}`
+        document.getElementById('timer').innerText = `Time Left : ${this.time.toFixed(1)}`;
+        colouredWords.innerText = game.getRandomWords();
+    }
+
 
     getRandomWords() {
         let text = ["Blue", "Green", "Red", "Yellow", "Purple"];
 
 
         for (let i = 0; i < text.length; i++) {
-            let randomWord = text[Math.floor(Math.random() * text.length)]
-            this.wordsArr.push(randomWord);
-            return randomWord;
+            this.randomWord = text[Math.floor(Math.random() * text.length)]
+            this.wordsArr.push(this.randomWord);
+
+            // document.getElementById("colouredWords").innerText = this.randomWord;
+            return this.randomWord;
         }
 
     }
+
 
 
     getRandomColours() {
@@ -30,39 +50,71 @@ class Game {
 
     }
 
-    setTimer(num) {
-        this.time += num;
-        this.countdown;
+    setTimer() {
+        this.interval = setInterval(() => {
+            this.time;
+            this.time--;
+
+
+            if (this.time === 0) {
+                clearInterval(this.interval);
+                this.gameOver();
+            }
+        }, 1000);
+        /* this.time--;
+         
+         if (this.time === 0) {
+            
+             this.gameOver();
+         } */
     }
 
-    getScore() {
 
-    }
+
+    // getScore() {
+
+    // }
 
     correctAnswer() {
         console.log("Correct!");
         this.score++;
-        document.getElementById("score").innerText = `Score: ${score}`
+        document.getElementById("score").innerText = `Score: ${this.score}`;
         this.getRandomColours();
         this.getRandomWords();
+        this.correctBuzzer.play();
+        this.setTimer();
     }
 
 
     wrongAnswer() {
 
         console.log("Wrong!");
+        this.score--;
+
         this.getRandomColours();
         this.getRandomWords();
+        this.wrongBuzzer.play();
+        this.setTimer();
+
+    }
+
+    gameOver() {
+        this.gameOverSound.play();
 
     }
 
 }
 
-
 let game = new Game();
 
-let randomCl = game.getRandomColours();
-colouredWords.innerHTML = game.getRandomWords();
+
+
+game.startGame();
+
+
+/*
+document.getElementById("score").innerText = `Score: ${game.score}`
+document.getElementById('timer').innerText = `Time Left : ${game.time.toFixed(1)}`; */
 
 
 let element = document.getElementsByClassName("colourbtn")[0].id;
@@ -89,42 +141,60 @@ const clickColour = document.querySelector(".container");
 blue.addEventListener("click", () => {
     if (game.wordsArr[0] == 'Blue' && element == 'Blue') {
         game.correctAnswer();
+
+
+
+
     } else {
         game.wrongAnswer();
+
     }
 })
 
 green.addEventListener("click", () => {
     if (game.wordsArr[0] == 'Green' && element2 == 'Green') {
         game.correctAnswer();
+
+
     } else {
         game.wrongAnswer();
+
     }
 })
 
 red.addEventListener("click", () => {
     if (game.wordsArr[0] == 'Red' && element3 == 'Red') {
         game.correctAnswer();
+
+
     } else {
         game.wrongAnswer();
+
     }
 })
 
 yellow.addEventListener("click", () => {
     if (game.wordsArr[0] == 'Yellow' && element4 == 'Yellow') {
         game.correctAnswer();
+
     } else {
         game.wrongAnswer();
+
     }
 })
 
 purple.addEventListener("click", () => {
     if (game.wordsArr[0] == 'Purple' && element5 == 'Purple') {
         game.correctAnswer();
+
+
+
     } else {
         game.wrongAnswer();
+
     }
 });
+
 
 
 
