@@ -6,7 +6,19 @@ const colouredWords = document.getElementById("colouredWords");
 
 const h2 = document.getElementsByTagName("h2");
 
-console.log(colourBtn);
+
+
+
+/*function findDiv() {
+    if (colourBtn.toString().includes("blue")) { console.log('correct'); }
+}
+
+findDiv(); 
+
+
+
+
+
 /*document.addEventListener('click', () => {
     // ... your code goes here
     if (colourBtn.className.includes("colourbtn hexagon")) {

@@ -44,12 +44,13 @@ header {
 
 h2 {
     font-family: 'Courier New', Courier, monospace;
+    font-size: 4rem;
 }
 
 
 /* blue button ***********/
 
-#blue.hexagon.colourbtn {
+#Blue.hexagon.colourbtn {
     width: 100px;
     height: 57.735px;
     position: relative;
@@ -57,7 +58,7 @@ h2 {
     background-color: #1FB4FF;
 }
 
-#blue.hexagon.colourbtn::before {
+#Blue.hexagon.colourbtn::before {
     content: "";
     position: absolute;
     top: -28.8675px;
@@ -69,7 +70,7 @@ h2 {
     border-bottom: 28.8675px solid #1FB4FF;
 }
 
-#blue.hexagon.colourbtn::after {
+#Blue.hexagon.colourbtn::after {
     content: "";
     position: absolute;
     bottom: -28.8675px;
@@ -84,7 +85,7 @@ h2 {
 
 /*  green button ********************/
 
-#green.hexagon.colourbtn {
+#Green.hexagon.colourbtn {
     width: 100px;
     height: 57.735px;
     position: relative;
@@ -92,7 +93,7 @@ h2 {
     background-color: #70FF57;
 }
 
-#green.hexagon.colourbtn::before {
+#Green.hexagon.colourbtn::before {
     content: "";
     position: absolute;
     top: -28.8675px;
@@ -104,7 +105,7 @@ h2 {
     border-bottom: 28.8675px solid #70FF57;
 }
 
-#green.hexagon.colourbtn::after {
+#Green.hexagon.colourbtn::after {
     content: "";
     position: absolute;
     bottom: -28.8675px;
@@ -119,7 +120,7 @@ h2 {
 
 /* Red button *********************/
 
-#red.hexagon.colourbtn {
+#Red.hexagon.colourbtn {
     width: 100px;
     height: 57.735px;
     position: relative;
@@ -127,7 +128,7 @@ h2 {
     background-color: #FF0A33;
 }
 
-#red.hexagon.colourbtn::before {
+#Red.hexagon.colourbtn::before {
     content: "";
     position: absolute;
     top: -28.8675px;
@@ -139,7 +140,7 @@ h2 {
     border-bottom: 28.8675px solid #FF0A33;
 }
 
-#red.hexagon.colourbtn::after {
+#Red.hexagon.colourbtn::after {
     content: "";
     position: absolute;
     bottom: -28.8675px;
@@ -154,7 +155,7 @@ h2 {
 
 /* Yellow button *********************/
 
-#yellow.hexagon.colourbtn {
+#Yellow.hexagon.colourbtn {
     width: 100px;
     height: 57.735px;
     position: relative;
@@ -162,7 +163,7 @@ h2 {
     background-color: #fafa33;
 }
 
-#yellow.hexagon.colourbtn::before {
+#Yellow.hexagon.colourbtn::before {
     content: "";
     position: absolute;
     top: -28.8675px;
@@ -174,7 +175,7 @@ h2 {
     border-bottom: 28.8675px solid #fafa33;
 }
 
-#yellow.hexagon.colourbtn::after {
+#Yellow.hexagon.colourbtn::after {
     content: "";
     position: absolute;
     bottom: -28.8675px;
@@ -189,7 +190,7 @@ h2 {
 
 /* Purple button *********************/
 
-#purple.hexagon.colourbtn {
+#Purple.hexagon.colourbtn {
     width: 100px;
     height: 57.735px;
     position: relative;
@@ -197,7 +198,7 @@ h2 {
     background-color: #BB4DFF;
 }
 
-#purple.hexagon.colourbtn::before {
+#Purple.hexagon.colourbtn::before {
     content: "";
     position: absolute;
     top: -28.8675px;
@@ -209,7 +210,7 @@ h2 {
     border-bottom: 28.8675px solid #BB4DFF;
 }
 
-#purple.hexagon.colourbtn::after {
+#Purple.hexagon.colourbtn::after {
     content: "";
     position: absolute;
     bottom: -28.8675px;
