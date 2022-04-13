@@ -53,10 +53,15 @@ class Game {
 
 
     getRandomColours() {
-        const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-        document.getElementById("colouredWords").style.
-        color = "#" + randomColor;
+        /* const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+         document.getElementById("colouredWords").style.
+         color = "#" + randomColor; */
 
+        let colorArr = ['#70FF57', '#1FB4FF', '#FF0A33', '#fafa33', '#BB4DFF'];
+        let i = Math.floor(Math.random() * colorArr.length);
+        document.getElementById("colouredWords").style.color = colorArr[i];
+        return colorArr[i];
+        //    console.log(colorArr[i]);
 
     }
 
@@ -95,7 +100,7 @@ class Game {
         this.score++;
         console.log(this.score);
         document.getElementById("score").innerText = `Score: ${this.score}`;
-        this.getRandomColours();
+        game.getRandomColours();
         // this.getRandomWords();
         this.correctBuzzer.play();
         this.increaseTimer();
@@ -153,7 +158,7 @@ const purple = document.getElementById("Purple");
 
 
 
-const clickColour = document.querySelector(".container");
+const randomColors = game.getRandomColours();
 
 
 
