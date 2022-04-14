@@ -1,7 +1,7 @@
 class Game {
     constructor() {
         this.score = 0;
-        //   this.wordsArr = [];
+        this.wordsArr = [];
         this.time = 10;
         // this.timeSpan = null; 
         this.timeInterval = null;
@@ -24,8 +24,8 @@ class Game {
 
     }
 
-    /*
-        getRandomWords() {
+
+    getRandomWords() {
             let text = ["Blue", "Green", "Red", "Yellow", "Purple"];
 
 
@@ -33,23 +33,24 @@ class Game {
                 this.randomWord = text[Math.floor(Math.random() * text.length)]
                 this.wordsArr.push(this.randomWord);
 
-                //  document.getElementById("colouredWords").innerHTML = this.randomWord;
+                document.getElementById("colouredWords").innerHTML = this.randomWord;
+                //  console.log(this.randomWord);
                 return this.randomWord;
             }
 
-        } */
+        }
+        /*
 
+            getRandomWords() {
+                let textArr = ["Blue", "Green", "Red", "Yellow", "Purple"];
 
-    getRandomWords() {
-        let textArr = ["Blue", "Green", "Red", "Yellow", "Purple"];
+                let i = Math.floor(Math.random() * textArr.length);
 
-        let i = Math.floor(Math.random() * textArr.length);
+                  document.getElementById("colouredWords").innerHTML = textArr[i];
 
-        document.getElementById("colouredWords").innerHTML = textArr[i];
-
-        return textArr[i];
-    }
-
+                return textArr[i];
+            }
+        */
 
 
     getRandomColours() {
@@ -76,7 +77,7 @@ class Game {
             }
             if (this.time === 0) {
                 clearInterval(this.timeInterval);
-                //     this.gameOver();
+                this.gameOver();
             }
         }, 1000);
 
@@ -101,7 +102,7 @@ class Game {
         console.log(this.score);
         document.getElementById("score").innerText = `Score: ${this.score}`;
         game.getRandomColours();
-        // this.getRandomWords();
+        this.getRandomWords();
         this.correctBuzzer.play();
         this.increaseTimer();
 
@@ -119,10 +120,10 @@ class Game {
 
     }
 
-    /*  gameOver() {
-          this.gameOverSound.play();
+    gameOver() {
+        this.gameOverSound.play();
 
-      } */
+    }
 
 }
 
@@ -136,8 +137,9 @@ window.onload = function() {
 
 };
 
-
-
+console.log(game.getRandomWords());
+console.log(game.randomWord);
+console.log(game.wordsArr[0]);
 
 /*
 document.getElementById("score").innerText = `Score: ${game.score}`
@@ -167,7 +169,7 @@ const randomColors = game.getRandomColours();
 
 blue.addEventListener("click", () => {
 
-    if (game.getRandomWords() == element) {
+    if (game.randomWord == element) {
         game.correctAnswer();
 
 
@@ -184,7 +186,7 @@ blue.addEventListener("click", () => {
 
 green.addEventListener("click", () => {
 
-    if (game.getRandomWords() == element2) {
+    if (game.randomWord == element2) {
         game.correctAnswer();
 
 
@@ -196,7 +198,7 @@ green.addEventListener("click", () => {
 })
 
 red.addEventListener("click", () => {
-    if (game.getRandomWords() == element3) {
+    if (game.randomWord == element3) {
         game.correctAnswer();
 
 
@@ -208,7 +210,7 @@ red.addEventListener("click", () => {
 })
 
 yellow.addEventListener("click", () => {
-    if (game.getRandomWords() == element4) {
+    if (game.randomWord == element4) {
         game.correctAnswer();
 
     } else {
@@ -219,7 +221,7 @@ yellow.addEventListener("click", () => {
 })
 
 purple.addEventListener("click", () => {
-    if (game.getRandomWords() == element5) {
+    if (game.randomWord == element5) {
         game.correctAnswer();
 
 
