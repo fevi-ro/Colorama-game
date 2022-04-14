@@ -11,14 +11,15 @@ class Game {
         this.wrongBuzzer = new Audio("sounds/add-ons_error.mp3");
         this.correctBuzzer = new Audio("sounds/instant-win.wav");
         this.gameOverSound = new Audio("sounds/mixkit-player-losing-or-failing-2042.wav");
+        this.clockSound = new Audio("sounds/Clock tick.mp3");
     }
 
 
 
 
     startGame() {
-        document.querySelector(".gameOver").style.visibility = "hidden";
-        document.querySelector("#replay").style.visibility = "hidden";
+        document.querySelector(".gameOver").style.display = "none";
+        document.querySelector("#replay").style.display = "none";
         document.querySelector(".newScore").style.display = "none";
         this.audio.play();
         this.setTimer();
@@ -68,6 +69,7 @@ class Game {
 
             if (this.time < 5) {
                 document.getElementById("timer").style.color = '#FF0526';
+                this.clockSound.play();
             }
             if (this.time === 0) {
                 clearInterval(this.timeInterval);
@@ -104,11 +106,13 @@ class Game {
 
     wrongAnswer() {
 
-        console.log("Wrong!");
+
         this.score = this.score - 1;
         document.getElementById("score").innerText = `Score: ${this.score}`;
 
         this.wrongBuzzer.play();
+        document.querySelector("body").className = "distraction";
+        setTimeout(function() { document.querySelector("body").className = ""; }, 50); //reset distraction
 
 
     }
@@ -116,12 +120,13 @@ class Game {
     gameOver() {
         this.audio.pause();
         this.gameOverSound.play();
-        document.querySelector(".container").style.visibility = "hidden";
-        document.querySelector("#colouredWords").style.visibility = "hidden";
+        this.clockSound.pause();
+        document.querySelector(".container").style.display = "none";
+        document.querySelector("#colouredWords").style.display = "none";
         // alert("game over!")
-        document.querySelector(".gameOver").style.visibility = "visible";
-        document.querySelector("#replay").style.visibility = "visible";
-        document.querySelector(".newScore").style.display = "block";
+        document.querySelector(".gameOver").style.display = "inline-block";
+        document.querySelector("#replay").style.display = "inline-block";
+        document.querySelector(".newScore").style.display = "inline-flex";
         document.querySelector(".newScore").innerText = `Score: ${this.score}`;
         document.getElementById("score").innerText = `Score: 0` //resets Score
 
@@ -139,12 +144,31 @@ let game = new Game();
 window.onload = function() {
 
     game.startGame();
+    let elem = document.createElement("img");
+    elem.src = 'images/blue.png';
+    document.getElementById("Blue").appendChild(elem);
+
+    let elem2 = document.createElement("img");
+    elem2.src = 'images/green.png';
+    document.getElementById("Green").appendChild(elem2);
+
+    let elem3 = document.createElement("img");
+    elem3.src = 'images/red.png';
+    document.getElementById("Red").appendChild(elem3);
+
+    let elem4 = document.createElement("img");
+    elem4.src = 'images/yellow.png';
+    document.getElementById("Yellow").appendChild(elem4);
+
+    let elem5 = document.createElement("img");
+    elem5.src = 'images/purple.png';
+    document.getElementById("Purple").appendChild(elem5);
+
 
 };
 
-console.log(game.getRandomWords());
-console.log(game.randomWord);
-console.log(game.wordsArr[0]);
+game.getRandomWords();
+
 
 
 

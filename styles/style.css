@@ -14,6 +14,7 @@ body {
     margin: 0;
     background-image: url("../images/bg77.jpg");
     background-size: contain;
+    font-family: 'Roboto';
 }
 
 #game-area {
@@ -71,6 +72,30 @@ main {
     text-align: center;
     align-items: center;
     margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.instructions {
+    display: block;
+    max-width: 50%;
+    margin-top: 0.8rem;
+    color: #505050;
+    font-family: 'Roboto', cursive;
+    font-size: 1.3rem;
+}
+
+h3 {
+    font-size: 2rem;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #8aa974;
 }
 
 #colouredWords {
@@ -91,39 +116,43 @@ h2 {
     font-size: 4rem;
 }
 
+a {
+    text-decoration: none;
+    color: transparent;
+}
+
+.distraction {
+    background: #FFFF00;
+}
+
 
 /* blue button ***********/
 
 #Blue.hexagon.colourbtn {
     width: 100px;
-    height: 57.735px;
     position: relative;
     margin: 1rem;
-    background-color: #1FB4FF;
+    overflow: hidden;
 }
 
-#Blue.hexagon.colourbtn::before {
-    content: "";
-    position: absolute;
-    top: -28.8675px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 28.8675px solid #1FB4FF;
+#Blue img {
+    width: 100%;
 }
 
-#Blue.hexagon.colourbtn::after {
-    content: "";
-    position: absolute;
-    bottom: -28.8675px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 28.8675px solid #1FB4FF;
+#Green img {
+    width: 100%;
+}
+
+#Red img {
+    width: 100%;
+}
+
+#Yellow img {
+    width: 100%;
+}
+
+#Purple img {
+    width: 100%;
 }
 
 
@@ -131,34 +160,9 @@ h2 {
 
 #Green.hexagon.colourbtn {
     width: 100px;
-    height: 57.735px;
     position: relative;
     margin: 1rem;
-    background-color: #70FF57;
-}
-
-#Green.hexagon.colourbtn::before {
-    content: "";
-    position: absolute;
-    top: -28.8675px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 28.8675px solid #70FF57;
-}
-
-#Green.hexagon.colourbtn::after {
-    content: "";
-    position: absolute;
-    bottom: -28.8675px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 28.8675px solid #70FF57;
+    overflow: hidden;
 }
 
 
@@ -166,34 +170,9 @@ h2 {
 
 #Red.hexagon.colourbtn {
     width: 100px;
-    height: 57.735px;
     position: relative;
     margin: 1rem;
-    background-color: #FF0A33;
-}
-
-#Red.hexagon.colourbtn::before {
-    content: "";
-    position: absolute;
-    top: -28.8675px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 28.8675px solid #FF0A33;
-}
-
-#Red.hexagon.colourbtn::after {
-    content: "";
-    position: absolute;
-    bottom: -28.8675px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 28.8675px solid #FF0A33;
+    overflow: hidden;
 }
 
 
@@ -201,34 +180,9 @@ h2 {
 
 #Yellow.hexagon.colourbtn {
     width: 100px;
-    height: 57.735px;
     position: relative;
     margin: 1rem;
-    background-color: #fafa33;
-}
-
-#Yellow.hexagon.colourbtn::before {
-    content: "";
-    position: absolute;
-    top: -28.8675px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 28.8675px solid #fafa33;
-}
-
-#Yellow.hexagon.colourbtn::after {
-    content: "";
-    position: absolute;
-    bottom: -28.8675px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 28.8675px solid #fafa33;
+    overflow: hidden;
 }
 
 
@@ -236,34 +190,9 @@ h2 {
 
 #Purple.hexagon.colourbtn {
     width: 100px;
-    height: 57.735px;
     position: relative;
     margin: 1rem;
-    background-color: #BB4DFF;
-}
-
-#Purple.hexagon.colourbtn::before {
-    content: "";
-    position: absolute;
-    top: -28.8675px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 28.8675px solid #BB4DFF;
-}
-
-#Purple.hexagon.colourbtn::after {
-    content: "";
-    position: absolute;
-    bottom: -28.8675px;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 28.8675px solid #BB4DFF;
+    overflow: hidden;
 }
 
 #Blue.hexagon.colourbtn:hover,
@@ -291,7 +220,7 @@ h1 {
 
 #play {
     text-align: center;
-    display: inline-block;
+    display: block;
     margin: 2px;
     font-weight: bold;
     padding: 10px 0 10px 10px;
@@ -366,7 +295,6 @@ h1 {
 
 .newScore {
     text-align: center;
-    display: inline-block;
     margin: 2px;
     margin-top: 5rem;
     font-weight: bold;
@@ -381,12 +309,19 @@ h1 {
     box-shadow: 0 .2em gray;
     font-family: 'Press Start 2P', cursive;
     font-size: 2.5rem;
+    width: fit-content;
 }
 
 .newScore:active {
     box-shadow: none;
     position: relative;
     top: .2em;
+}
+
+.fit-content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -401,12 +336,18 @@ h1 {
         background-repeat: round;
         background-size: cover;
     }
+    .container {
+        flex-wrap: nowrap;
+    }
+    #startpage.container {
+        flex-wrap: wrap;
+    }
     #Blue.hexagon.colourbtn,
     #Green.hexagon.colourbtn,
     #Red.hexagon.colourbtn,
     #Yellow.hexagon.colourbtn,
     #Purple.hexagon.colourbtn {
-        margin: 0.2rem;
+        margin: 0rem;
     }
     .wrapper {
         margin-left: 0rem;
@@ -420,6 +361,71 @@ h1 {
     }
     .gameOver,
     #replay {
+        font-size: 2rem;
+        margin-top: 0.5rem;
+    }
+    img {
+        max-width: 80%;
+    }
+    .instructions {
+        display: none;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    body,
+    #game-area {
+        width: 100%;
+    }
+    .container {
+        flex-wrap: nowrap;
+    }
+    #startpage.container {
+        flex-wrap: wrap;
+    }
+    .instructions {
+        display: none;
+    }
+    body {
+        background-repeat: round;
+        background-size: cover;
+    }
+    #Blue.hexagon.colourbtn,
+    #Green.hexagon.colourbtn,
+    #Red.hexagon.colourbtn,
+    #Yellow.hexagon.colourbtn,
+    #Purple.hexagon.colourbtn {
+        margin: 0rem;
+        width: unset;
+    }
+    .wrapper {
+        margin-left: 0rem;
+        width: 99%
+    }
+    header {
+        margin-left: 1rem;
+        display: inline-flex;
+        width: 20rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .gameOver,
+    #replay {
+        font-size: 2rem;
+        margin-left: 0rem;
+        margin-top: 0.5rem;
+    }
+    img {
+        max-width: 90%;
+        margin-top: 1rem;
+    }
+    #timer,
+    #score {
+        font-size: 0.7rem;
+        padding-left: 1rem;
+    }
+    .newScore {
         font-size: 2rem;
     }
 }
