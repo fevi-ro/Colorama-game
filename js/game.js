@@ -3,7 +3,8 @@ class Game {
         this.score = 0;
         this.wordsArr = [];
         this.time = 10;
-
+        this.highScore = 0;
+        this.previousScore = 0;
         this.timeInterval = null;
         this.audio = new Audio("sounds/8_Bit_Retro_Funk.mp3");
         this.audio.volume = 0.2;
@@ -18,13 +19,13 @@ class Game {
 
 
     startGame() {
-        document.querySelector(".gameOver").style.display = "none";
-        document.querySelector("#replay").style.display = "none";
-        document.querySelector(".newScore").style.display = "none";
+
         this.audio.play();
         this.setTimer();
         document.getElementById("score").innerText = `Score: ${this.score}`
-
+        document.querySelector(".gameOver").style.display = "none";
+        document.querySelector("#replay").style.display = "none";
+        document.querySelector(".newScore").style.display = "none";
 
 
 
@@ -32,7 +33,7 @@ class Game {
 
 
     getRandomWords() {
-        let text = ["Blue", "Green", "Red", "Yellow", "Purple"];
+        let text = ["Blue", "Green", "Red", "Yellow", "Purple", "Not Blue!", "Not Yellow!", "Not Green!", "Not Red!", "Not Purple!"];
 
 
         for (let i = 0; i < text.length; i++) {
@@ -53,7 +54,9 @@ class Game {
          document.getElementById("colouredWords").style.
          color = "#" + randomColor; */ // generates completelly random colours
 
-        let colorArr = ['#70FF57', '#1FB4FF', '#FF0A33', '#fafa33', '#BB4DFF'];
+        let colorArr = ['#65ee4d', '#1FB4FF', '#FF0A33', '#fafa33', '#BB4DFF', '#EC006B', '#FF3DA8', '#4D2600', '#141300', '#FF5900', '#00DAD1', '#3B0075', '#00CC07', '#FF1111', '#6C0057', '#0D7E00', '#CFBD00', '#FF86FF', '#FF26A2', '#FFC226',
+            '#746A52', '#C20071', '#A700CC', '#C2009E', '#7D7D7D', '#E0A800', '#008F8F', '#4D002F', '#746A52', '#FF311F', '#0A0A0A', '#FF6542', '#120085', '#FF66CF'
+        ];
         let i = Math.floor(Math.random() * colorArr.length);
         document.getElementById("colouredWords").style.color = colorArr[i];
         return colorArr[i];
@@ -121,16 +124,29 @@ class Game {
         this.audio.pause();
         this.gameOverSound.play();
         this.clockSound.pause();
+
+        if (this.score > this.highScore) {
+            this.highScore = this.score;
+        }
+
         document.querySelector(".container").style.display = "none";
         document.querySelector("#colouredWords").style.display = "none";
         // alert("game over!")
+
+        if (this.score > this.previousScore) {
+            document.querySelector(".newScore").innerText = `New Highscore: ${this.score}!`;
+        } else {
+            document.querySelector(".newScore").innerText = `Highscore: ${this.previousScore}`;
+
+        }
+
         document.querySelector(".gameOver").style.display = "inline-block";
         document.querySelector("#replay").style.display = "inline-block";
         document.querySelector(".newScore").style.display = "inline-flex";
         document.querySelector(".newScore").innerText = `Score: ${this.score}`;
         document.getElementById("score").innerText = `Score: 0` //resets Score
 
-
+        this.previousScore = this.highScore;
 
 
     }
@@ -193,7 +209,7 @@ const randomColors = game.getRandomColours();
 
 blue.addEventListener("click", () => {
 
-    if (game.randomWord == element) {
+    if (game.randomWord == element || game.randomWord == 'Not Yellow!' || game.randomWord == 'Not Green!' || game.randomWord == 'Not Red!' || game.randomWord == 'Not Purple!') {
         game.correctAnswer();
 
 
@@ -208,7 +224,7 @@ blue.addEventListener("click", () => {
 
 green.addEventListener("click", () => {
 
-    if (game.randomWord == element2) {
+    if (game.randomWord == element2 || game.randomWord == 'Not Blue!' || game.randomWord == 'Not Yellow!' || game.randomWord == 'Not Red!' || game.randomWord == 'Not Purple!') {
         game.correctAnswer();
 
 
@@ -220,7 +236,7 @@ green.addEventListener("click", () => {
 })
 
 red.addEventListener("click", () => {
-    if (game.randomWord == element3) {
+    if (game.randomWord == element3 || game.randomWord == 'Not Blue!' || game.randomWord == 'Not Yellow!' || game.randomWord == 'Not Green!' || game.randomWord == 'Not Purple!') {
         game.correctAnswer();
 
 
@@ -232,7 +248,7 @@ red.addEventListener("click", () => {
 })
 
 yellow.addEventListener("click", () => {
-    if (game.randomWord == element4) {
+    if (game.randomWord == element4 || game.randomWord == 'Not Blue!' || game.randomWord == 'Not Red!' || game.randomWord == 'Not Green!' || game.randomWord == 'Not Purple!') {
         game.correctAnswer();
 
     } else {
@@ -243,7 +259,7 @@ yellow.addEventListener("click", () => {
 })
 
 purple.addEventListener("click", () => {
-    if (game.randomWord == element5) {
+    if (game.randomWord == element5 || game.randomWord == 'Not Blue!' || game.randomWord == 'Not Yellow!' || game.randomWord == 'Not Red!' || game.randomWord == 'Not Green!') {
         game.correctAnswer();
 
 
