@@ -10,5 +10,5 @@ Each incorrect match gets a penalty of 1 point.
 
 You have 10 seconds to find the correct match, so be quick! :star2:	
 
-
+#### Play the game :arrow_down:	
 https://fevi-ro.github.io/Colorama-game/
