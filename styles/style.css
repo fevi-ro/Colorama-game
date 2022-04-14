@@ -310,7 +310,7 @@ h1 {
     }
     body {
         background-repeat: round;
-        background-size: contain;
+        background-size: cover;
     }
     #Blue.hexagon.colourbtn,
     #Green.hexagon.colourbtn,

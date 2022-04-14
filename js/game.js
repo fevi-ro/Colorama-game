@@ -8,7 +8,7 @@ class Game {
         this.audio = "";
         this.randomWord = '';
         this.wrongBuzzer = new Audio("sounds/add-ons_error.mp3");
-        this.correctBuzzer = new Audio("sounds/mixkit-instant-win-2021.wav");
+        this.correctBuzzer = new Audio("sounds/instant-win.wav");
         this.gameOverSound = new Audio("sounds/mixkit-player-losing-or-failing-2042.wav");
     }
 
@@ -18,7 +18,7 @@ class Game {
     startGame() {
         this.setTimer();
         document.getElementById("score").innerText = `Score: ${this.score}`
-        colouredWords.innerText = game.getRandomWords();
+            //   colouredWords.innerText = game.getRandomWords();
 
 
 
@@ -104,6 +104,7 @@ class Game {
         game.getRandomColours();
         this.getRandomWords();
         this.correctBuzzer.play();
+
         this.increaseTimer();
 
     }
