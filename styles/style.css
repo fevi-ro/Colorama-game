@@ -68,17 +68,17 @@ main {
 
 .container {
     display: inline-flex;
-    padding-top: 8rem;
     text-align: center;
     align-items: center;
+    margin-top: 1rem;
 }
 
 #colouredWords {
-    border-color: #FF0A33;
+    border-color: transparent;
 }
 
 .col1 {
-    display: inline-flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -266,6 +266,20 @@ h2 {
     border-top: 28.8675px solid #BB4DFF;
 }
 
+#Blue.hexagon.colourbtn:hover,
+#Blue.hexagon.colourbtn:focus,
+#Green.hexagon.colourbtn:hover,
+#Green.hexagon.colourbtn:focus,
+#Red.hexagon.colourbtn:hover,
+#Red.hexagon.colourbtn:focus,
+#Yellow.hexagon.colourbtn:hover,
+#Yellow.hexagon.colourbtn:focus,
+#Purple.hexagon.colourbtn:hover,
+#Purple.hexagon.colourbtn:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+}
+
 h1 {
     margin-top: 0px;
     font-family: 'Press Start 2P', cursive;
@@ -300,6 +314,81 @@ h1 {
     top: .2em;
 }
 
+#replay {
+    text-align: center;
+    display: inline-block;
+    margin: 2px;
+    font-weight: bold;
+    padding: 10px 0 10px 10px;
+    background-color: #fff426;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    box-shadow: 0 .2em gray;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+}
+
+#replay:active {
+    box-shadow: none;
+    position: relative;
+    top: .2em;
+}
+
+.gameOver {
+    text-align: center;
+    display: inline-block;
+    margin: 2px;
+    margin-left: 2rem;
+    font-weight: bold;
+    padding: 10px 0 10px 10px;
+    background-color: #700ba9;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: #ab9595;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    box-shadow: 0 .2em gray;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+}
+
+.gameOver:active {
+    box-shadow: none;
+    position: relative;
+    top: .2em;
+}
+
+.newScore {
+    text-align: center;
+    display: inline-block;
+    margin: 2px;
+    margin-top: 5rem;
+    font-weight: bold;
+    padding: 10px 0 10px 10px;
+    background-color: #ff00b7;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: #979797;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    box-shadow: 0 .2em gray;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+}
+
+.newScore:active {
+    box-shadow: none;
+    position: relative;
+    top: .2em;
+}
+
 
 /* Media Queries * * * * * * * * */
 
@@ -328,5 +417,9 @@ h1 {
     }
     h1 {
         font-size: 4rem;
+    }
+    .gameOver,
+    #replay {
+        font-size: 2rem;
     }
 }
