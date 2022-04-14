@@ -125,69 +125,21 @@ a {
     background: #FFFF00;
 }
 
-
-/* blue button ***********/
-
-#Blue.hexagon.colourbtn {
-    width: 100px;
-    position: relative;
-    margin: 1rem;
-    overflow: hidden;
-}
-
-#Blue img {
-    width: 100%;
-}
-
-#Green img {
-    width: 100%;
-}
-
-#Red img {
-    width: 100%;
-}
-
-#Yellow img {
-    width: 100%;
-}
-
+#Blue img,
+#Green img,
+#Red img,
+#Yellow img,
 #Purple img {
     width: 100%;
 }
 
 
-/*  green button ********************/
+/*  colour buttons ********************/
 
-#Green.hexagon.colourbtn {
-    width: 100px;
-    position: relative;
-    margin: 1rem;
-    overflow: hidden;
-}
-
-
-/* Red button *********************/
-
-#Red.hexagon.colourbtn {
-    width: 100px;
-    position: relative;
-    margin: 1rem;
-    overflow: hidden;
-}
-
-
-/* Yellow button *********************/
-
-#Yellow.hexagon.colourbtn {
-    width: 100px;
-    position: relative;
-    margin: 1rem;
-    overflow: hidden;
-}
-
-
-/* Purple button *********************/
-
+#Blue.hexagon.colourbtn,
+#Green.hexagon.colourbtn,
+#Red.hexagon.colourbtn,
+#Yellow.hexagon.colourbtn,
 #Purple.hexagon.colourbtn {
     width: 100px;
     position: relative;
@@ -221,20 +173,9 @@ h1 {
 #play {
     text-align: center;
     display: block;
-    margin: 2px;
-    font-weight: bold;
-    padding: 10px 0 10px 10px;
-    background-color: #ff9b9b;
-    text-shadow: -1px -1px black, 1px 1px white;
-    color: gray;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -o-border-radius: 7px;
-    border-radius: 7px;
-    box-shadow: 0 .2em gray;
     cursor: pointer;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 2.5rem;
+    background-color: #adff69;
+    color: gray;
 }
 
 #play:active {
@@ -244,22 +185,10 @@ h1 {
 }
 
 #replay {
-    text-align: center;
     display: inline-block;
-    margin: 2px;
-    font-weight: bold;
-    padding: 10px 0 10px 10px;
     background-color: #fff426;
-    text-shadow: -1px -1px black, 1px 1px white;
-    color: gray;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -o-border-radius: 7px;
-    border-radius: 7px;
-    box-shadow: 0 .2em gray;
     cursor: pointer;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 2.5rem;
+    color: gray;
 }
 
 #replay:active {
@@ -269,15 +198,21 @@ h1 {
 }
 
 .gameOver {
-    text-align: center;
     display: inline-block;
-    margin: 2px;
     margin-left: 2rem;
+    background-color: #700ba9;
+    color: #ab9595;
+}
+
+#play,
+#replay,
+.gameOver,
+.newScore {
+    text-align: center;
+    margin: 2px;
     font-weight: bold;
     padding: 10px 0 10px 10px;
-    background-color: #700ba9;
     text-shadow: -1px -1px black, 1px 1px white;
-    color: #ab9595;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     -o-border-radius: 7px;
@@ -294,22 +229,10 @@ h1 {
 }
 
 .newScore {
-    text-align: center;
-    margin: 2px;
     margin-top: 5rem;
-    font-weight: bold;
-    padding: 10px 0 10px 10px;
     background-color: #ff00b7;
-    text-shadow: -1px -1px black, 1px 1px white;
-    color: #979797;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -o-border-radius: 7px;
-    border-radius: 7px;
-    box-shadow: 0 .2em gray;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 2.5rem;
     width: fit-content;
+    color: #979797;
 }
 
 .newScore:active {
