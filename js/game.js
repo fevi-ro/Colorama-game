@@ -22,6 +22,7 @@ class Game {
 
         this.audio.play();
         this.setTimer();
+        this.loopAudio();
         document.getElementById("score").innerText = `Score: ${this.score}`
         document.querySelector(".gameOver").style.display = "none";
         document.querySelector("#replay").style.display = "none";
@@ -150,6 +151,18 @@ class Game {
 
 
     }
+
+    loopAudio() {
+        if (typeof this.audio.loop == 'boolean') {
+            this.audio.loop = true;
+        } else {
+            this.audio.addEventListener('ended', function() {
+                this.time = 0;
+                this.audio.play();
+            }, false);
+        }
+    }
+
 
 }
 
